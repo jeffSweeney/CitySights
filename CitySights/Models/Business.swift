@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Business: Decodable {
+struct Business: Decodable, Identifiable {
     var id: String?
     var is_closed: Bool?
     var review_count: Int?
