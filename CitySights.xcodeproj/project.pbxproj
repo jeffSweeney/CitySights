@@ -17,6 +17,10 @@
 		63E825782778E74400C21A5E /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E825772778E74400C21A5E /* Business.swift */; };
 		63E8257A2778EA8100C21A5E /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E825792778EA8100C21A5E /* Coordinate.swift */; };
 		63E8257C2778EAB700C21A5E /* BusinessSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8257B2778EAB700C21A5E /* BusinessSearch.swift */; };
+		63E825812778F63400C21A5E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E825802778F63400C21A5E /* HomeView.swift */; };
+		63E825842778FA1C00C21A5E /* BusinessListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E825832778FA1C00C21A5E /* BusinessListView.swift */; };
+		63E825862778FE0200C21A5E /* BusinessSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E825852778FE0200C21A5E /* BusinessSectionHeaderView.swift */; };
+		63E825882778FEF200C21A5E /* BusinessSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E825872778FEF200C21A5E /* BusinessSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		63E825772778E74400C21A5E /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		63E825792778EA8100C21A5E /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		63E8257B2778EAB700C21A5E /* BusinessSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSearch.swift; sourceTree = "<group>"; };
+		63E825802778F63400C21A5E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		63E825832778FA1C00C21A5E /* BusinessListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessListView.swift; sourceTree = "<group>"; };
+		63E825852778FE0200C21A5E /* BusinessSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSectionHeaderView.swift; sourceTree = "<group>"; };
+		63E825872778FEF200C21A5E /* BusinessSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,9 @@
 		63491B6D2774FC85000BD504 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63E8257F2778F62700C21A5E /* Home */,
+				63E8257E2778F61C00C21A5E /* Denied */,
+				63E8257D2778F61400C21A5E /* Onboarding */,
 				63491B602774FC59000BD504 /* LaunchView.swift */,
 			);
 			path = Views;
@@ -115,6 +126,39 @@
 				63491B742778D8B5000BD504 /* PrivateConstants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		63E8257D2778F61400C21A5E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		63E8257E2778F61C00C21A5E /* Denied */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Denied;
+			sourceTree = "<group>";
+		};
+		63E8257F2778F62700C21A5E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				63E825802778F63400C21A5E /* HomeView.swift */,
+				63E825822778FA0A00C21A5E /* List */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		63E825822778FA0A00C21A5E /* List */ = {
+			isa = PBXGroup;
+			children = (
+				63E825832778FA1C00C21A5E /* BusinessListView.swift */,
+				63E825852778FE0200C21A5E /* BusinessSectionHeaderView.swift */,
+				63E825872778FEF200C21A5E /* BusinessSectionView.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,8 +231,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63E825862778FE0200C21A5E /* BusinessSectionHeaderView.swift in Sources */,
+				63E825812778F63400C21A5E /* HomeView.swift in Sources */,
 				63E8257A2778EA8100C21A5E /* Coordinate.swift in Sources */,
 				63E8257C2778EAB700C21A5E /* BusinessSearch.swift in Sources */,
+				63E825882778FEF200C21A5E /* BusinessSectionView.swift in Sources */,
+				63E825842778FA1C00C21A5E /* BusinessListView.swift in Sources */,
 				63491B612774FC59000BD504 /* LaunchView.swift in Sources */,
 				63491B5F2774FC59000BD504 /* CitySightsApp.swift in Sources */,
 				63491B70277504CF000BD504 /* ContentModel.swift in Sources */,

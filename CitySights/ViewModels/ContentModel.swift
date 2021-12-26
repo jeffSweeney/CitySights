@@ -12,6 +12,8 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     var locationManager = CLLocationManager()
     
+    @Published var authorizationState = CLAuthorizationStatus.notDetermined
+    
     @Published var restaurants = [Business]()
     @Published var sights = [Business]()
     
@@ -28,6 +30,11 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     // MARK: - Location Manager Delegate Methods
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        // Published authorization state must reflect update
+        DispatchQueue.main.async {
+            self.authorizationState = self.locationManager.authorizationStatus
+        }
+        
         let authStatus = locationManager.authorizationStatus
         
         if authStatus == .authorizedAlways || authStatus == .authorizedWhenInUse {
