@@ -12,6 +12,9 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     var locationManager = CLLocationManager()
     
+    @Published var restaurants = [Business]()
+    @Published var sights = [Business]()
+    
     override init() {
         super.init()
         
@@ -42,7 +45,7 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
             getBusinesses(Constants.Restaurants, userLocation)
             
             // Retrieve arts
-//            let arts = getBusinesses(Constants.ArtsAndEntertainment, userLocation)
+            getBusinesses(Constants.ArtsAndEntertainment, userLocation)
             
             // Only need location once - stop requesting
             locationManager.stopUpdatingLocation()
@@ -78,7 +81,25 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
             // Create Data Task
             let task = session.dataTask(with: request) { (data, response, error) in
                 if error == nil {
-                    print(response!)
+                    let decoder = JSONDecoder()
+                    
+                    do {
+                        let businessSearch = try decoder.decode(BusinessSearch.self, from: data!)
+                        
+                        // Writing to published view code - MUST do so on main thread!
+                        DispatchQueue.main.async {
+                            switch category {
+                                case Constants.ArtsAndEntertainment:
+                                    self.sights = businessSearch.businesses
+                                case Constants.Restaurants:
+                                    self.restaurants = businessSearch.businesses
+                                default:
+                                    print("UNSUPPORTED CATEGORTY")
+                            }
+                        }
+                    } catch {
+                        print(error)
+                    }
                 } else {
                     print(error!)
                 }
