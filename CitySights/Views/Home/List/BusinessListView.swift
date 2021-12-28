@@ -11,7 +11,7 @@ struct BusinessListView: View {
     @EnvironmentObject var model: ContentModel
     
     var body: some View {
-        ScrollView {
+        ScrollView (showsIndicators: false){
             // App limits to 6 sights and 6 restaurants so Lazy is probably
             // overkill here - but it allows the app to extend it's capabilities
             // later on.
