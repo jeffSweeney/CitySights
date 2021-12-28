@@ -30,4 +30,7 @@ class Constants {
     // MARK: - HTTP Method and Authorization
     static let HTTPMethod = "GET"
     static let HTTPAuthorization = "Bearer \(PrivateConstants.APIKey)"
+    
+    // MARK: - Meters in a Mile
+    static let MetersPerMile = 1609.34
 }

@@ -33,6 +33,7 @@ struct HomeView: View {
                     
                     BusinessListView()
                 }
+                .padding([.horizontal, .top])
             } else {
                 // TODO: Build the map view that can be toggled to
             }

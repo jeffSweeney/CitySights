@@ -15,9 +15,7 @@ struct BusinessSectionView: View {
         Section (header: BusinessSectionHeaderView(title: sectionName)) {
             // List all restaurants that have been retrieved
             ForEach(businesses) { business in
-                // TODO: Implement look of actual row
-                Text(business.name ?? "Couldn't load name")
-                Divider()
+                BusinessRowView(business: business)
             }
         }
     }
