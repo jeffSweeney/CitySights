@@ -93,13 +93,24 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
                     do {
                         let businessSearch = try decoder.decode(BusinessSearch.self, from: data!)
                         
+                        // Sort businesses by distance
+                        var businesses = businessSearch.businesses
+                        businesses.sort { b1, b2 in
+                            (b1.distance ?? 0) < (b2.distance ?? 0)
+                        }
+                        
                         // Writing to published view code - MUST do so on main thread!
                         DispatchQueue.main.async {
+                            // Retrieve the image data before assigning
+                            for business in businesses {
+                                business.getImageData()
+                            }
+                            
                             switch category {
                                 case Constants.ArtsAndEntertainment:
-                                    self.sights = businessSearch.businesses
+                                    self.sights = businesses
                                 case Constants.Restaurants:
-                                    self.restaurants = businessSearch.businesses
+                                    self.restaurants = businesses
                                 default:
                                     print("UNSUPPORTED CATEGORTY")
                             }
