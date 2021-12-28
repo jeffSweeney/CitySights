@@ -21,6 +21,7 @@
 		63E825842778FA1C00C21A5E /* BusinessListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E825832778FA1C00C21A5E /* BusinessListView.swift */; };
 		63E825862778FE0200C21A5E /* BusinessSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E825852778FE0200C21A5E /* BusinessSectionHeaderView.swift */; };
 		63E825882778FEF200C21A5E /* BusinessSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E825872778FEF200C21A5E /* BusinessSectionView.swift */; };
+		63E8258A277B60B500C21A5E /* BusinessRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E82589277B60B500C21A5E /* BusinessRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		63E825832778FA1C00C21A5E /* BusinessListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessListView.swift; sourceTree = "<group>"; };
 		63E825852778FE0200C21A5E /* BusinessSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSectionHeaderView.swift; sourceTree = "<group>"; };
 		63E825872778FEF200C21A5E /* BusinessSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSectionView.swift; sourceTree = "<group>"; };
+		63E82589277B60B500C21A5E /* BusinessRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				63E825832778FA1C00C21A5E /* BusinessListView.swift */,
 				63E825852778FE0200C21A5E /* BusinessSectionHeaderView.swift */,
 				63E825872778FEF200C21A5E /* BusinessSectionView.swift */,
+				63E82589277B60B500C21A5E /* BusinessRowView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				63E8257A2778EA8100C21A5E /* Coordinate.swift in Sources */,
 				63E8257C2778EAB700C21A5E /* BusinessSearch.swift in Sources */,
 				63E825882778FEF200C21A5E /* BusinessSectionView.swift in Sources */,
+				63E8258A277B60B500C21A5E /* BusinessRowView.swift in Sources */,
 				63E825842778FA1C00C21A5E /* BusinessListView.swift in Sources */,
 				63491B612774FC59000BD504 /* LaunchView.swift in Sources */,
 				63491B5F2774FC59000BD504 /* CitySightsApp.swift in Sources */,
