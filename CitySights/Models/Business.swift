@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Business: Decodable, Identifiable {
+class Business: Decodable, Identifiable, ObservableObject {
+    @Published var imageData: Data?
+    
     var id: String?
     var isClosed: Bool?
     var reviewCount: Int?
@@ -45,6 +47,34 @@ struct Business: Decodable, Identifiable {
         case transactions
         case distance
         case name
+    }
+    
+    func distanceAsMiles() -> String {
+        if let distance = distance {
+            let miles = distance/Constants.MetersPerMile
+            return String(format: "%.2f", miles)
+        } else {
+            return "Distance Unavailable"
+        }
+    }
+    
+    func getImageData() {
+        if let imageUrl = imageUrl {
+            if let url = URL(string: imageUrl) {
+                let session = URLSession.shared
+                
+                session.dataTask(with: url) { (data, response, error) in
+                    guard error == nil else {
+                        print(error!)
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.imageData = data!
+                    }
+                }.resume()
+            }
+        }
     }
 }
 
