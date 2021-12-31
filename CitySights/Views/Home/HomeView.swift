@@ -20,20 +20,24 @@ struct HomeView: View {
             ProgressView()
         } else {
             if isListShowing {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Image(systemName: "mappin")
-                        Text("Odenton, MD") // TODO: Update to not be hardcoded
-                        Spacer()
-                        Text("Map View")
+                NavigationView {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Image(systemName: "mappin")
+                            Text("Odenton, MD") // TODO: Update to not be hardcoded
+                            Spacer()
+                            Text("Map View")
+                        }
+                        .padding([.horizontal], 5)
+                        
+                        Divider()
+                        
+                        BusinessListView()
                     }
-                    .padding([.horizontal], 5)
-                    
-                    Divider()
-                    
-                    BusinessListView()
+                    .padding([.horizontal, .top])
+                    .tint(.black)
+                    .navigationBarHidden(true)
                 }
-                .padding([.horizontal, .top])
             } else {
                 // TODO: Build the map view that can be toggled to
             }
