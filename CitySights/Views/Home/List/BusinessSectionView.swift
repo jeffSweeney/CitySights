@@ -15,7 +15,11 @@ struct BusinessSectionView: View {
         Section (header: BusinessSectionHeaderView(title: sectionName)) {
             // List all restaurants that have been retrieved
             ForEach(businesses) { business in
-                BusinessRowView(business: business)
+                NavigationLink(destination: {
+                    BusinessDetailView(business: business)
+                }) {
+                    BusinessRowView(business: business)
+                }
             }
         }
     }
