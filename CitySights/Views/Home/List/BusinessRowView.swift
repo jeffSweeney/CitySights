@@ -23,7 +23,10 @@ struct BusinessRowView: View {
                     .scaledToFit()
                 
                 VStack (alignment: .leading) {
+                    // The NavigationView in HomeView makes multi-line text centered. Override
+                    // this back to leading.
                     Text(business.name ?? "Name Unavailable")
+                        .multilineTextAlignment(.leading)
                     Text("\(business.distanceAsMiles()) mi. away")
                         .font(.caption)
                 }
