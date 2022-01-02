@@ -24,9 +24,14 @@ struct HomeView: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Image(systemName: "mappin")
+                            
                             Text("Odenton, MD") // TODO: Update to not be hardcoded
+                            
                             Spacer()
-                            Text("Map View")
+                            
+                            Button(action: {isListShowing = false}) {
+                                Text("Map View")
+                            }
                         }
                         .padding([.horizontal], 5)
                         
@@ -39,7 +44,8 @@ struct HomeView: View {
                     .navigationBarHidden(true)
                 }
             } else {
-                // TODO: Build the map view that can be toggled to
+                BusinessMapView()
+                    .ignoresSafeArea()
             }
         }
     }
