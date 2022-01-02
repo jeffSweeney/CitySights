@@ -24,6 +24,7 @@
 		63E8258A277B60B500C21A5E /* BusinessRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E82589277B60B500C21A5E /* BusinessRowView.swift */; };
 		63E8258D277E226700C21A5E /* BusinessDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8258C277E226700C21A5E /* BusinessDetailView.swift */; };
 		63E8258F277E608E00C21A5E /* BusinessDetailLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8258E277E608E00C21A5E /* BusinessDetailLinkView.swift */; };
+		63E82592278227BA00C21A5E /* BusinessMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E82591278227BA00C21A5E /* BusinessMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		63E82589277B60B500C21A5E /* BusinessRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessRowView.swift; sourceTree = "<group>"; };
 		63E8258C277E226700C21A5E /* BusinessDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailView.swift; sourceTree = "<group>"; };
 		63E8258E277E608E00C21A5E /* BusinessDetailLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailLinkView.swift; sourceTree = "<group>"; };
+		63E82591278227BA00C21A5E /* BusinessMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				63E825802778F63400C21A5E /* HomeView.swift */,
 				63E825822778FA0A00C21A5E /* List */,
+				63E825902782274C00C21A5E /* Map */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -176,6 +179,14 @@
 				63E8258E277E608E00C21A5E /* BusinessDetailLinkView.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		63E825902782274C00C21A5E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				63E82591278227BA00C21A5E /* BusinessMapView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +264,7 @@
 				63E825812778F63400C21A5E /* HomeView.swift in Sources */,
 				63E8257A2778EA8100C21A5E /* Coordinate.swift in Sources */,
 				63E8257C2778EAB700C21A5E /* BusinessSearch.swift in Sources */,
+				63E82592278227BA00C21A5E /* BusinessMapView.swift in Sources */,
 				63E825882778FEF200C21A5E /* BusinessSectionView.swift in Sources */,
 				63E8258A277B60B500C21A5E /* BusinessRowView.swift in Sources */,
 				63E8258F277E608E00C21A5E /* BusinessDetailLinkView.swift in Sources */,
