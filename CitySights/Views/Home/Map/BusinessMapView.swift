@@ -10,6 +10,7 @@ import MapKit
 
 struct BusinessMapView: UIViewRepresentable {
     @EnvironmentObject var contentModel: ContentModel
+    @Binding var selectedBusiness: Business?
     
     var locations: [MKPointAnnotation] {
         var annotations = [MKPointAnnotation]()
@@ -60,11 +61,18 @@ struct BusinessMapView: UIViewRepresentable {
     
     // Given in the UIViewRepresentable protocol for delegate-protocol pattern
     func makeCoordinator() -> Coordinator {
-        return Coordinator()
+        return Coordinator(mapInstance: self)
     }
     
     // Required class to assign instance as delegate to MKMapView
     internal class Coordinator: NSObject, MKMapViewDelegate {
+        
+        var mapInstance: BusinessMapView
+        
+        init(mapInstance: BusinessMapView) {
+            self.mapInstance = mapInstance
+        }
+        
         // This is displayed above the pin on the MapView
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
             // User location is treated as an annotation. Don't want this displayed like the businesses
@@ -86,11 +94,25 @@ struct BusinessMapView: UIViewRepresentable {
                 
                 // Make the annotation view tapable - used to display the business details.
                 annotationView.canShowCallout = true
-                // TODO: Handle the button tap
                 annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             }
             
             return annotationView
+        }
+        
+        // Tells us the user tapped on this annotation
+        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+            // Retrieve the business this annotation represents
+            if let annotationTitle = view.annotation?.title {
+                for business in mapInstance.contentModel.restaurants + mapInstance.contentModel.sights {
+                    if business.name == annotationTitle {
+                        // Updates state property which in turn triggers the State property in HomeView
+                        // which will launch the sheet with this business.
+                        mapInstance.selectedBusiness = business
+                        break // Overkill? Should trigger the UI change regardless, right?
+                    }
+                }
+            }
         }
     }
 }
