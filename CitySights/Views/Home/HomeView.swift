@@ -25,18 +25,7 @@ struct HomeView: View {
             if isListShowing {
                 NavigationView {
                     VStack(alignment: .leading) {
-                        HStack {
-                            Image(systemName: "mappin")
-                            
-                            Text("Odenton, MD") // TODO: Update to not be hardcoded
-                            
-                            Spacer()
-                            
-                            Button(action: {isListShowing = false}) {
-                                Text("Map View")
-                            }
-                        }
-                        .padding([.horizontal], 5)
+                        HomeBarView(isListShowing: $isListShowing, sfSymbol: "mappin", switchToView: "Map")
                         
                         Divider()
                         
@@ -47,11 +36,23 @@ struct HomeView: View {
                     .navigationBarHidden(true)
                 }
             } else {
-                BusinessMapView(selectedBusiness: $selectedBusiness)
-                    .ignoresSafeArea()
-                    .sheet(item: $selectedBusiness) { business in
-                        BusinessDetailView(business: business)
+                ZStack (alignment: .top) {
+                    BusinessMapView(selectedBusiness: $selectedBusiness)
+                        .ignoresSafeArea()
+                        .sheet(item: $selectedBusiness) { business in
+                            BusinessDetailView(business: business)
+                        }
+                    
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(.white)
+                            .cornerRadius(5)
+                            .frame(height: 48)
+                        
+                        HomeBarView(isListShowing: $isListShowing, sfSymbol: "location", switchToView: "List")
                     }
+                    .padding()
+                }
             }
         }
     }
