@@ -33,4 +33,7 @@ class Constants {
     
     // MARK: - Meters in a Mile
     static let MetersPerMile = 1609.34
+    
+    // MARK: - Reuse constant
+    static let ReuseIdentifier = "business"
 }
