@@ -32,6 +32,10 @@ struct BusinessMapView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
+
+        // Setting to the context coordinator allows the system to dictate which
+        // coordinator needs to be used
+        mapView.delegate = context.coordinator
         
         // Show user on map
         mapView.showsUserLocation = true
@@ -50,5 +54,43 @@ struct BusinessMapView: UIViewRepresentable {
     
     static func dismantleUIView(_ mapView: MKMapView, coordinator: ()) {
         mapView.removeAnnotations(mapView.annotations)
+    }
+    
+    // MARK: - Coordinator
+    
+    // Given in the UIViewRepresentable protocol for delegate-protocol pattern
+    func makeCoordinator() -> Coordinator {
+        return Coordinator()
+    }
+    
+    // Required class to assign instance as delegate to MKMapView
+    internal class Coordinator: NSObject, MKMapViewDelegate {
+        // This is displayed above the pin on the MapView
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            // User location is treated as an annotation. Don't want this displayed like the businesses
+            if annotation is MKUserLocation {
+                return nil
+            }
+            
+            // Alright to set as an explicit unwrap - will always be set after the if/else below
+            var annotationView: MKAnnotationView! = mapView.dequeueReusableAnnotationView(withIdentifier: Constants.ReuseIdentifier)
+            
+            if let annotationView = annotationView {
+                annotationView.annotation = annotation
+            } else {
+                // This will display balloon-shaped marker at the location on the map
+                // NOTE: The reuseIdentifier allows this annotation view to be reused when scrolled out of screen,
+                //          rather than creating a new instance in memory for a new marker. See the initial declaration
+                //          above where we try to grab a reuse annotation view first.
+                annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: Constants.ReuseIdentifier)
+                
+                // Make the annotation view tapable - used to display the business details.
+                annotationView.canShowCallout = true
+                // TODO: Handle the button tap
+                annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            }
+            
+            return annotationView
+        }
     }
 }
