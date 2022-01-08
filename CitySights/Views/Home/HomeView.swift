@@ -14,6 +14,9 @@ struct HomeView: View {
     // property will update the view
     @State var isListShowing = true
     
+    // Defined in sheet from BusinessMapView - set on annotation tap
+    @State var selectedBusiness: Business?
+    
     var body: some View {
         if model.restaurants.count == 0 && model.sights.count == 0 {
             // Could take a moment for data to arrive
@@ -44,15 +47,12 @@ struct HomeView: View {
                     .navigationBarHidden(true)
                 }
             } else {
-                BusinessMapView()
+                BusinessMapView(selectedBusiness: $selectedBusiness)
                     .ignoresSafeArea()
+                    .sheet(item: $selectedBusiness) { business in
+                        BusinessDetailView(business: business)
+                    }
             }
         }
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
     }
 }
