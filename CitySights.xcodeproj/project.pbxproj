@@ -25,6 +25,7 @@
 		63E8258D277E226700C21A5E /* BusinessDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8258C277E226700C21A5E /* BusinessDetailView.swift */; };
 		63E8258F277E608E00C21A5E /* BusinessDetailLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8258E277E608E00C21A5E /* BusinessDetailLinkView.swift */; };
 		63E82592278227BA00C21A5E /* BusinessMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E82591278227BA00C21A5E /* BusinessMapView.swift */; };
+		63E82594278A2CC900C21A5E /* HomeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E82593278A2CC900C21A5E /* HomeBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		63E8258C277E226700C21A5E /* BusinessDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailView.swift; sourceTree = "<group>"; };
 		63E8258E277E608E00C21A5E /* BusinessDetailLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailLinkView.swift; sourceTree = "<group>"; };
 		63E82591278227BA00C21A5E /* BusinessMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMapView.swift; sourceTree = "<group>"; };
+		63E82593278A2CC900C21A5E /* HomeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				63E825802778F63400C21A5E /* HomeView.swift */,
+				63E82593278A2CC900C21A5E /* HomeBarView.swift */,
 				63E8258B277E225000C21A5E /* Detail */,
 				63E825822778FA0A00C21A5E /* List */,
 				63E825902782274C00C21A5E /* Map */,
@@ -270,6 +273,7 @@
 				63E8258F277E608E00C21A5E /* BusinessDetailLinkView.swift in Sources */,
 				63E825842778FA1C00C21A5E /* BusinessListView.swift in Sources */,
 				63491B612774FC59000BD504 /* LaunchView.swift in Sources */,
+				63E82594278A2CC900C21A5E /* HomeBarView.swift in Sources */,
 				63491B5F2774FC59000BD504 /* CitySightsApp.swift in Sources */,
 				63491B70277504CF000BD504 /* ContentModel.swift in Sources */,
 				63E825782778E74400C21A5E /* Business.swift in Sources */,
