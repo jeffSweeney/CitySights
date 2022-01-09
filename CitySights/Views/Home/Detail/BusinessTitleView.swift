@@ -14,7 +14,7 @@ struct BusinessTitleView: View {
         VStack (alignment: .leading) {
             // Fixed size prevents long business names from abbreviating
             Text(business.name ?? "Name Unavailable")
-                .font(.largeTitle)
+                .font(.title)
                 .padding()
                 .fixedSize(horizontal: false, vertical: true)
             
