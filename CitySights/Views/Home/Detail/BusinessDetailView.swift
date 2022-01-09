@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BusinessDetailView: View {
     var business: Business
+    @State private var showDirectionsSheet = false
     
     var body: some View {
         VStack {
@@ -85,7 +86,7 @@ struct BusinessDetailView: View {
             
             // MARK: - Directions Button
             Button(action: {
-                // TODO: Implement
+                showDirectionsSheet = true
             }) {
                 ZStack {
                     Rectangle()
@@ -99,6 +100,9 @@ struct BusinessDetailView: View {
                 }
             }
             .padding()
+            .sheet(isPresented: $showDirectionsSheet) {
+                DirectionsView(business: business)
+            }
         }
     }
 }
