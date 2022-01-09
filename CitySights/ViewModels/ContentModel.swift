@@ -127,4 +127,21 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
             task.resume()
         }
     }
+    
+    // MARK: - Apple MapLinks
+    func getMapLink(business: Business) -> URL? {
+        var url: URL?
+        
+        // Declared as constant to shorten the optional binding line. Cleaner this way.
+        let lat = business.coordinates?.latitude
+        let long = business.coordinates?.longitude
+        let name = business.name
+        
+        if let lat = lat, let long = long, let name = name {
+            let encodedName = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "Location"
+            url = URL(string: "http://maps.apple.com/?ll=\(lat),\(long)&q=\(encodedName)")
+        }
+        
+        return url
+    }
 }
