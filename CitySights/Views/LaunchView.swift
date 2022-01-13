@@ -17,13 +17,13 @@ struct LaunchView: View {
         // - if denied: show error and prompt for permission
         let authState = model.authorizationState
         if authState == .notDetermined {
-            // TODO: Implement onboarding view
+            OnboardingView()
         }
         else if authState == .authorizedWhenInUse || authState == .authorizedAlways {
             HomeView()
         }
         else if authState == .denied {
-            // TODO: Implement denied view
+            DeniedView()
         }
     }
 }
