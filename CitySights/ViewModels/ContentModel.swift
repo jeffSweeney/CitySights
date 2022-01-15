@@ -17,6 +17,8 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var restaurants = [Business]()
     @Published var sights = [Business]()
     
+    @Published var placemark: CLPlacemark?
+    
     override init() {
         super.init()
         
@@ -42,21 +44,31 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
             locationManager.startUpdatingLocation()
         }
         else if authStatus == .denied {
-            // TODO: User MUST authorize permission for app to work - enforce
+            // We don't have permission - this is enforced to retry in the onboarding.
+            // Keeping else if branch for this documentation.
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Capture locations and send off the the Yelp API
         if let userLocation = locations.first {
+            // Only need location once - stop requesting
+            locationManager.stopUpdatingLocation()
+            
+            // Retrieve and set the placemark of the user
+            let geoCoder = CLGeocoder()
+            geoCoder.reverseGeocodeLocation(userLocation) { (placemarks, error) in
+                if error == nil && placemarks != nil {
+                    self.placemark = placemarks!.first
+                }
+            }
+            
             // Retrieve restaurants
             getBusinesses(Constants.Restaurants, userLocation)
             
             // Retrieve arts
             getBusinesses(Constants.ArtsAndEntertainment, userLocation)
             
-            // Only need location once - stop requesting
-            locationManager.stopUpdatingLocation()
         }
     }
     
