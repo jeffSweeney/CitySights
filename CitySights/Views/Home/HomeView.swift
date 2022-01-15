@@ -29,7 +29,15 @@ struct HomeView: View {
                         
                         Divider()
                         
-                        BusinessListView()
+                        ZStack (alignment: .top) {
+                            BusinessListView()
+                            
+                            HStack {
+                                Spacer()
+                                YelpLinkView(link: "https://yelp.com")
+                            }
+                            .padding(.trailing, -20) // Desire to hit edge of screen
+                        }
                     }
                     .padding([.horizontal, .top])
                     .tint(.black)
