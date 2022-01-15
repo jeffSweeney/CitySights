@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeBarView: View {
+    @EnvironmentObject var contentModel: ContentModel
+    
     @Binding var isListShowing: Bool
     var sfSymbol: String
     var switchToView: String
@@ -16,7 +18,7 @@ struct HomeBarView: View {
         HStack {
             Image(systemName: sfSymbol)
             
-            Text("Odenton, MD") // TODO: Update to not be hardcoded
+            Text(contentModel.placemark?.locality ?? "")
             
             Spacer()
             
