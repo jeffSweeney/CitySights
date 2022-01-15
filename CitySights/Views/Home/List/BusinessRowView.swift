@@ -41,7 +41,8 @@ struct BusinessRowView: View {
                 }
             }
             
-            Divider()
+            DashedDividerView()
+                .padding(.vertical, 5)
         }
     }
 }
