@@ -48,9 +48,7 @@ struct BusinessDetailView: View {
                 
                 Spacer()
                 
-                // TODO: Add Yelp logo here
-                Text("Yelp!")
-                    .padding(.horizontal)
+                YelpLinkView(link: business.url ?? "")
             }
             
             Divider()
