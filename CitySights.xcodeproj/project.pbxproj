@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630777452793665E00B379F2 /* YelpLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630777442793665E00B379F2 /* YelpLinkView.swift */; };
 		63491B5F2774FC59000BD504 /* CitySightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63491B5E2774FC59000BD504 /* CitySightsApp.swift */; };
 		63491B612774FC59000BD504 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63491B602774FC59000BD504 /* LaunchView.swift */; };
 		63491B632774FC5A000BD504 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63491B622774FC5A000BD504 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		630777442793665E00B379F2 /* YelpLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpLinkView.swift; sourceTree = "<group>"; };
 		63491B5B2774FC59000BD504 /* CitySights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitySights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63491B5E2774FC59000BD504 /* CitySightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySightsApp.swift; sourceTree = "<group>"; };
 		63491B602774FC59000BD504 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		630777432793663B00B379F2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				630777442793665E00B379F2 /* YelpLinkView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		63491B522774FC59000BD504 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 				63E8257F2778F62700C21A5E /* Home */,
 				63E8257E2778F61C00C21A5E /* Denied */,
 				63E8257D2778F61400C21A5E /* Onboarding */,
+				630777432793663B00B379F2 /* Common */,
 				63491B602774FC59000BD504 /* LaunchView.swift */,
 			);
 			path = Views;
@@ -280,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630777452793665E00B379F2 /* YelpLinkView.swift in Sources */,
 				63E82598278B474300C21A5E /* BusinessTitleView.swift in Sources */,
 				63E825862778FE0200C21A5E /* BusinessSectionHeaderView.swift in Sources */,
 				63E8258D277E226700C21A5E /* BusinessDetailView.swift in Sources */,
