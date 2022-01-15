@@ -50,8 +50,10 @@ struct BusinessDetailView: View {
                 
                 YelpLinkView(link: business.url ?? "")
             }
+            .padding(.bottom, 10)
             
-            Divider()
+            DashedDividerView()
+                .padding(.horizontal)
             
             Group {
                 // MARK: - Phone
@@ -61,7 +63,8 @@ struct BusinessDetailView: View {
                     urlString: "tel:\(business.phone ?? "")",
                     linkString: "Call")
                 
-                Divider()
+                DashedDividerView()
+                    .padding(.horizontal)
                 
                 // MARK: - Reviews
                 BusinessDetailLinkView(
@@ -70,7 +73,8 @@ struct BusinessDetailView: View {
                     urlString: business.url ?? "",
                     linkString: "Read")
                 
-                Divider()
+                DashedDividerView()
+                    .padding(.horizontal)
                 
                 // MARK: - Website
                 BusinessDetailLinkView(
@@ -79,7 +83,8 @@ struct BusinessDetailView: View {
                     urlString: business.url ?? "",
                     linkString: "Visit")
                 
-                Divider()
+                DashedDividerView()
+                    .padding(.horizontal)
             }
             
             // MARK: - Directions Button
