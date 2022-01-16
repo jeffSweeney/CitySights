@@ -12,3 +12,8 @@ of the locations, and directions to the venue when desired.
 If you wish to see this app in action, you will need to provide a valid Yelp API key in the
 PrivateConstants.swift file. I am not tracking my personal key on GitHub since this is a
 public repo.
+
+## Asset Images
+
+Images in this app do not belong to me. These were provided as a package of resources from
+CWC+.
